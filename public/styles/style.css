@@ -78,3 +78,9 @@ body{
     border: 1px solid #ccc;
     border-radius: 5px;
 }
+
+.wrapper {
+    max-width: 1024px;
+    margin-left: auto;
+    margin-right: auto;
+}
