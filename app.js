@@ -15,7 +15,7 @@ app.use(
   mainRoute,
   searchRoute
 );
-
+app.use('/images', express.static(path.join(__dirname, 'public', 'images')));
 app.listen(PORT, () =>
   console.log(`Сервер запущен на http://localhost:${PORT}`)
 );
