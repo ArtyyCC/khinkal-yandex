@@ -59,16 +59,12 @@ body {
 }
 
 .hero__button {
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
-    padding-left: 2.5rem;
-    padding-right: 2.5rem;
+    padding: 0.5rem 2.5rem;
     border-radius: 1.5rem;
     font-size: 0.875rem;
     line-height: 1.25rem;
     font-weight: 700;
     background-color: #ffffff;
-    font-family: 'Montserrat';
 }
 
 .hero__paragraph {
@@ -158,7 +154,7 @@ h2 {
     opacity: 0;
     border-radius: 15px;
     overflow: auto;
-    transition: order: 1;
+    transition: all ease;
 
     position: absolute;
     z-index: 100;
@@ -178,15 +174,10 @@ h2 {
     content: "";
     background-size: contain;
     background-repeat: no-repeat;
-
-    disaply: flex;
     height: 100%;
     width: 32px;
     right: 10px;
-    top: 5px;
-
     top: 120%;
-
     transition: all 0.4s;
 }
 
@@ -210,8 +201,6 @@ h2 {
     align-items: center;
     background-color: transparent;
     border-radius: 15px;
-
-    height: 100%;
     top: 25%;
     height: 20px;
 
@@ -225,8 +214,6 @@ h2 {
 .select-box .options-container::-webkit-scrollbar {
     width: 8px;
     border-radius: 15px;
-    scrollbar-width: 5px;
-    width: 5px;
     margin-top: -10px;
     overflow: hidden;
     background: transparent;
@@ -234,7 +221,7 @@ h2 {
 }
 
 body {
-    overflow: overlay !important;
+    overflow: hidden;
 }
 
 ::-webkit-scrollbar {
@@ -248,9 +235,7 @@ body {
 .select-box .options-container::-webkit-scrollbar-thumb {
     background: #525861;
     border-radius: 15px;
-    scrollbar-width: 5px;
     height: 5px;
-    length: 10px;
     margin-top: -10px;
 }
 
@@ -260,7 +245,7 @@ body {
 }
 
 .options-container {
-    overflow: overlay !important;
+    overflow: hidden;
 }
 
 .select-box .option,
@@ -287,7 +272,6 @@ body {
     display: none;
 }
 
-/* Searchbox */
 
 .search-box input {
     width: 100%;
@@ -319,4 +303,9 @@ body {
 .selector-wrapper {
     position: relative;
     display: flex;
+}
+
+.image-wrapper {
+    margin: 20px 0;
+    width: 100%;
 }

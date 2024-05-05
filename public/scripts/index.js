@@ -1,5 +1,5 @@
 let buttonArray = [
-    "#sad", "#happy", "#gambling", "#rainbow", "#Georgian", "#Turkish"
+    "#sad", "#happy", "#gambling", "#rainbow", "#Georgian", "#Turkish", "#stars"
 ]
 
 
