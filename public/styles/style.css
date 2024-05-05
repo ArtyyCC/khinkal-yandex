@@ -201,7 +201,7 @@ h2 {
     width: 800px;
     opacity: 0;
     border-radius: 15px;
-    overflow: auto;
+    overflow: scroll;
     transition: all ease;
 
     position: absolute;
@@ -232,7 +232,7 @@ h2 {
 .select-box .options-container.active {
     max-height: 240px;
     opacity: 1;
-    overflow-y: hidden;
+    overflow-y: scroll;
     margin-top: 54px;
 }
 
@@ -263,13 +263,13 @@ h2 {
     width: 8px;
     border-radius: 15px;
     margin-top: -10px;
-    overflow: hidden;
+    overflow: scroll;
     background: transparent;
     display: none;
 }
 
 body {
-    overflow: hidden;
+    overflow: scroll;
 }
 
 ::-webkit-scrollbar {
