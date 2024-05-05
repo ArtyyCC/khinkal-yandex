@@ -81,6 +81,53 @@ font-family: 'Montserrat';
   border-color: #ffffff;
 }
 
+.cards__row{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.cards__column{
+    box-shadow: 57px 72px 145px 7px rgba(255, 255, 255, 0.1);
+    max-width: max-content;
+    padding: 20px;
+    border: 1px solid #232323;
+    border-radius: 21px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.cards__image{
+    max-width: 283px;
+    border-radius: 15px;
+}
+
+.cards__title{
+    text-decoration: underline;
+}
+
+.cards__author__block{
+    font-weight: 300;
+    display: flex;
+    color: rgb(189, 189, 189);
+    justify-content: space-between;
+    padding-bottom: 5px;
+    border-bottom: solid 1px rgb(141, 141, 141);
+}
+
+.cards__price__block{
+    font-weight: 300;
+    display: flex;
+    color: rgb(189, 189, 189);
+    justify-content: space-between;
+    padding-bottom: 5px;
+    border-bottom: solid 1px rgb(141, 141, 141);
+
+}
+
 .search-container {
   margin: 20px;
 }
