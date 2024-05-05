@@ -113,6 +113,57 @@
         <div id="results" class="results-container" role="region" aria-live="polite">
             <!-- Результаты поиска будут отображены здесь -->
         </div>
+        <div class="dropout-wrapper">
+            <h2 class="form-title">Какая ты хинкалина</h2>
+            <div class="select-box">
+                <div class="options-container">
+                    <button class="option">
+                        <input type="radio" class="radio" id="sad" name="category" value="Грустная" />
+                        <label for="sad">Грустная 🫠 </label>
+                    </button>
+
+                    <button class="option">
+                        <input type="radio" class="radio" id="happy" name="category" value="Весёлая" />
+                        <label for="happy">Весёлая 🥳 </label>
+                    </button>
+
+                    <button class="option">
+                        <input type="radio" class="radio" id="gambling" name="category" value="Азартная" />
+                        <label for="gambling">Азартная 🎲 </label>
+                    </button>
+
+                    <button class="option">
+                        <input type="radio" class="radio" id="rainbow" name="category" value="Радужная" />
+                        <label for="rainbow">Радужная 🌈</label>
+                    </button>
+                    <button class="option">
+                        <input type="radio" class="radio" id="Georgian" name="category" value="Грузинская" />
+                        <label for="Georgian">Грузинская 🥟 </label>
+                    </button>
+                    <button class="option">
+                        <input type="radio" class="radio" id="Turkish" name="category" value="Turkish" />
+                        <label for="Turkish">Turkish 🇹🇷  </label>
+                    </button>
+                    <button class="option">
+                        <input type="radio" class="radio" id="stars" name="category" value="Звёздная" />
+                        <label for="stars">Звёздная 🌟  </label>
+                    </button>
+
+                </div>
+
+                <div class="selector-wrapper">
+                    <span class=selected>Выбери себя </span>
+
+                    <svg class="arrow rotated" style="text-align: right" id="drp-arrow2" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="transition-all ml-auto rotate-180">
+                        <path d="M7 14.5l5-5 5 5" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </svg>
+                </div>
+            </div>
+            <div class="image-wrapper" id="imageWrapper">
+
+            </div>
+    </div>
+
     </div>
 
     <script src="scripts/index.js"></script>

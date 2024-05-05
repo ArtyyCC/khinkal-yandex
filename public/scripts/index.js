@@ -1,42 +1,84 @@
-function generateResultCard(result) {
-  const card = document.createElement("div");
-  card.classList.add("result-card");
-  card.innerHTML = `
-        <h3>${result.title}</h3>
-        <p>${result.description}</p>
-        <a href="${result.link}" target="_blank">Подробнее</a>
-    `;
-  return card;
-}
+let buttonArray = [
+    "#sad", "#happy", "#gambling", "#rainbow", "#Georgian", "#Turkish", "#stars"
+]
 
-document
-  .getElementById("searchForm")
-  .addEventListener("submit", handleFormSubmit);
 
-async function handleFormSubmit(event) {
-  event.preventDefault();
+buttonArray.forEach((element) => {
+    const button = document.querySelector(element)
+    button.addEventListener("click", async () => {
+        try {
+            const response = await fetch("http://localhost:3000/search", {
+                method: "POST",
+                body: JSON.stringify(button.value)
+            })
+            const data = await response.json()
+            const imageWrapper = document.getElementById("imageWrapper")
+            imageWrapper.innerHTML = `<img src="${data.img}">`
+        } catch (error) {
+            console.log(error)
+        }
+    })
+})
 
-  try {
-    const formData = new FormData(event.target);
 
-    const response = await fetch("/search", {
-      method: "POST",
-      body: formData,
+
+const selectedAll = document.querySelectorAll(".selector-wrapper");
+
+selectedAll.forEach((selected) => {
+    const optionsContainer = selected.previousElementSibling;
+
+    const optionsList = optionsContainer.querySelectorAll(".option");
+
+    selected.addEventListener("click", () => {
+        let arrow = selected.parentNode.querySelector(".arrow");
+
+        if (optionsContainer.classList.contains("active")) {
+            optionsContainer.classList.remove("active");
+
+            arrow.classList.add("rotated");
+        } else {
+            let currentActive = document.querySelector(".options-container.active");
+
+            if (currentActive) {
+                currentActive.classList.remove("active");
+                let anotherArrow = currentActive.parentNode.querySelector(".arrow");
+
+                anotherArrow.classList.add("rotated");
+            }
+
+            arrow.classList.remove("rotated");
+            optionsContainer.classList.add("active");
+        }
     });
 
-    if (!response.ok) {
-      throw new Error("Ошибка при отправке запроса: " + response.status);
+    optionsList.forEach((o) => {
+        o.addEventListener("click", () => {
+            selected.querySelector(".selected").innerHTML = o.querySelector(
+                "label"
+            ).innerHTML;
+            optionsContainer.classList.remove("active");
+
+            let arrow = selected.parentNode.querySelector(".arrow");
+            arrow.classList.add("rotated");
+        });
+    });
+});
+
+window.addEventListener("click", function (e) {
+    if (e.target.closest(".select-box") === null) {
+        closeDropdown();
     }
+});
 
-    const data = await response.json();
+function closeDropdown() {
+    const selectedAll = document.querySelectorAll(".selector-wrapper");
 
-    const resultsContainer = document.getElementById("results");
-    resultsContainer.innerHTML = "";
-    data.results.forEach((result) => {
-      const resultCard = generateResultCard(result);
-      resultsContainer.appendChild(resultCard);
+    selectedAll.forEach((selected) => {
+        const optionsContainer = selected.previousElementSibling;
+        let arrow = selected.parentNode.querySelector(".arrow");
+
+        optionsContainer.classList.remove("active");
+        arrow.classList.add("rotated");
     });
-  } catch (error) {
-    console.error(error);
-  }
 }
+
